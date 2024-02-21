@@ -20,12 +20,12 @@ describe('Swag Labs', () => {
         await LoginPage.login(process.env.USERNAME_PROBLEM_USER, process.env.PASSWORD_SAUCEDEMO)
         await HomePage.validateHomePage()
     })
-    // it('Should Login error with performance_glitch_user', async() =>{
-    //     await LoginPage.open()
-    //     await LoginPage.login(process.env.USERNAME_PERFORMANCE_GLITCH_USER, process.env.PASSWORD_SAUCEDEMO)
-    //     await HomePage.validateHomePage()
-    //     await LoginPage.validateGlitchUser()
-    // })
+    it('Should Login error with performance_glitch_user', async() =>{
+        await LoginPage.open()
+        await LoginPage.login(process.env.USERNAME_PERFORMANCE_GLITCH_USER, process.env.PASSWORD_SAUCEDEMO)
+        await HomePage.validateHomePage()
+        await HomePage.validateGlitchUser()
+    })
     it('Should Login error with error_user', async() =>{
         await LoginPage.open()
         await LoginPage.login(process.env.USERNAME_ERROR_USER, process.env.PASSWORD_SAUCEDEMO)
@@ -56,5 +56,13 @@ describe('Swag Labs', () => {
         await HomePage.validateHomePage()
         await HomePage.validateCart()
         await HomePage.validateCheckout()
+    })
+    it('Should Input Information Fields', async() =>{
+        await LoginPage.open()
+        await LoginPage.login(process.env.USERNAME_STANDARD_USER, process.env.PASSWORD_SAUCEDEMO)
+        await HomePage.validateHomePage()
+        await HomePage.validateCart()
+        await HomePage.validateCheckout()
+        await HomePage.Information(process.env.NAME, process.env.LAST_NAME, process.env.ZIP)
     })
 })
