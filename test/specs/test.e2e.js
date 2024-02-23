@@ -15,23 +15,23 @@ describe('Swag Labs', () => {
         await LoginPage.login(process.env.USERNAME_LOCKED_OUT_USER, process.env.PASSWORD_SAUCEDEMO)
         await LoginPage.validateLockedOutUserError()
     })
-    it('Should Login error with problem_user', async() =>{
+    it('Should Login with problem_user', async() =>{
         await LoginPage.open()
         await LoginPage.login(process.env.USERNAME_PROBLEM_USER, process.env.PASSWORD_SAUCEDEMO)
         await HomePage.validateHomePage()
     })
-    it('Should Login error with performance_glitch_user', async() =>{
+    it('Should Login with performance_glitch_user', async() =>{
         await LoginPage.open()
         await LoginPage.login(process.env.USERNAME_PERFORMANCE_GLITCH_USER, process.env.PASSWORD_SAUCEDEMO)
         await HomePage.validateHomePage()
         await HomePage.validateGlitchUser()
     })
-    it('Should Login error with error_user', async() =>{
+    it('Should Login with error_user', async() =>{
         await LoginPage.open()
         await LoginPage.login(process.env.USERNAME_ERROR_USER, process.env.PASSWORD_SAUCEDEMO)
         await HomePage.validateHomePage()
     })
-    it('Should Login error with visual_user', async() =>{
+    it('Should Login with visual_user', async() =>{
         await LoginPage.open()
         await LoginPage.login(process.env.USERNAME_VISUAL_USER, process.env.PASSWORD_SAUCEDEMO)
         await HomePage.validateHomePage()
